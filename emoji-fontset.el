@@ -30,10 +30,7 @@
 
 ;; put into your own .emacs file (init.el)
 
-;;   (custom-set-variables
-;;     '(emoji-fontset/font-family "Symbola"))
-;;
-;;   (emoji-fontset/turn-on)
+;;   (emoji-fontset/turn-on "Symbola")
 
 ;;; Code:
 
@@ -48,9 +45,7 @@
   :type '(repeat (cons symbol string)))
 
 (defconst emoji-fontset/codepoint
-  '((#x2300 . #x23ff)   ; Miscellaneous Technical
-    (#x2600 . #x27bf)   ; Miscellaneous Symbols, Dingbet
-    (#x1f000 . #x1f02f) ; Mahjong Tiles
+  '((#x1f000 . #x1f02f) ; Mahjong Tiles
     (#x1f0a0 . #x1f0ff) ; Playing Cards
     (#x1f110 . #x1f19a) ; Enclosed Alphanumeric Supplement
     ; Regional Indicator Symbol, Enclosed Ideographic Supplement,
