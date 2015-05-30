@@ -38,10 +38,7 @@
 ;;; Code:
 
 (defcustom emoji-fontset/default-font-family "Symbola"
-  "Default Font Family Emoji for Emoji.")
-
-(defcustom emoji-fontset/font-family nil
-  "Font Family for Emoji."
+  "Default Font Family Emoji for Emoji."
   :type '(string))
 
 (defcustom emoji-fontset/font-families
@@ -60,10 +57,10 @@
     ; Emoticons, Transport and Map Symbols, Alchemical Symbols
     (#x1f1e6 . #x1f8ff)))
 
-(defun emoji-fontset/font-family ()
-  "Choose Font Family for Emoji fontset by `WINDOW-SYSTEM'."
+(defun emoji-fontset/font-family (font-family)
+  "Choose `FONT-FAMILY' for Emoji fontset by `WINDOW-SYSTEM'."
   (or
-   emoji-fontset/font-family
+   font-family
    (car (assoc-default window-system emoji-fontset/font-families 'eq '()))
    emoji-fontset/default-font-family))
 
@@ -75,11 +72,11 @@
    font-family))
 
 ;;;###autoload
-(defun emoji-fontset/turn-on ()
-  "Be enable Emoji Font face."
+(defun emoji-fontset/turn-on (&optional font-family)
+  "Be enable Emoji Font face by `FONT-FAMILY'."
   (interactive)
   (when window-system
-    (let ((-emoji-font-family (emoji-fontset/font-family)))
+    (let ((-emoji-font-family (emoji-fontset/font-family font-family)))
       (mapc (lambda (it) (emoji-fontset/set-fontset -emoji-font-family it))
             emoji-fontset/codepoint)
       t)))
