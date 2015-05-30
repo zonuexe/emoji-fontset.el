@@ -1,5 +1,3 @@
-;; -*- coding: utf-8 -*-
-
 * Unicode 7.0 Emoji and Symbols
 ** =[U+1F000-U+1F02F]= Mahjong Tiles
    #+BEGIN_QUOTE
