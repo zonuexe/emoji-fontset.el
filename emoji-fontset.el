@@ -75,6 +75,9 @@
 (defun emoji-fontset/turn-on (&optional font-family)
   "Be enable Emoji Font face by `FONT-FAMILY'."
   (interactive)
+  (when (or (> emacs-major-version 24)
+            (> emacs-minor-version 5))
+    (error "This script is out-of-date"))
   (when window-system
     (let ((-emoji-font-family (emoji-fontset/font-family font-family)))
       (mapc (lambda (it) (emoji-fontset/set-fontset -emoji-font-family it))
