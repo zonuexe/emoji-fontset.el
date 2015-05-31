@@ -69,7 +69,7 @@
 ;;;###autoload
 (defun emoji-fontset/turn-on (&optional font-family)
   "Be enable Emoji Font face by `FONT-FAMILY'."
-  (interactive)
+  (interactive "MEmoji Font Famly: ")
   (when (or (> emacs-major-version 24)
             (> emacs-minor-version 5))
     (error "This script is out-of-date"))
