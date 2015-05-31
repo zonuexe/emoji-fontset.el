@@ -36,12 +36,14 @@
 
 (defcustom emoji-fontset/default-font-family "Symbola"
   "Default Font Family Emoji for Emoji."
+  :group 'emoji-fontset
   :type '(string))
 
 (defcustom emoji-fontset/font-families
   '((ns  "Apple Color Emoji")
     (w32 "Segoe UI Emoji"))
   "Assoc list of Font Family for Emoji by `WINDOW-SYSTEM'."
+  :group 'emoji-fontset
   :type '(repeat (cons symbol string)))
 
 (defconst emoji-fontset/codepoint

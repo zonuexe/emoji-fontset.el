@@ -26,7 +26,7 @@
    #+END_SRC
 
    #+BEGIN_QUOTE
-   🇨🇳🇩🇪🇪🇸🇫🇷🇬🇧🇮🇹🇯🇵🇰🇷🇷🇺🇺🇸
+   🇧🇷🇨🇳🇩🇪🇪🇸🇫🇷🇬🇧🇮🇹🇯🇵🇰🇷🇷🇺🇺🇸🇮🇸🇮🇪🇦🇿🇦🇫🇿🇼🇧🇴🇰🇵
    #+END_QUOTE
 
 ** =[U+1F200-U+1F251]= Enclosed Ideographic Supplement
