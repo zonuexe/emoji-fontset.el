@@ -74,8 +74,7 @@
   (interactive "MEmoji Font Famly: ")
   (when (and (stringp font-family) (< (length font-family) 1))
     (setq font-family nil))
-  (when (not (and (<= emacs-major-version 24)
-		  (<= emacs-minor-version 5)))
+  (when (version< "25.1" emacs-version)
     (error "This script is out-of-date"))
   (when window-system
     (let ((-emoji-font-family (emoji-fontset/font-family font-family)))
