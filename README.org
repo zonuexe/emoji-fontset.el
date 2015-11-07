@@ -1,2 +1,22 @@
 * emoji-fontset.el
-  
+Set font face for Emoji on Emacs.
+
+[[./screenshot-symbola.png]]
+
+- [[http://qiita.com/tadsan/items/a67b28dd02bf819f3f4e][Emacsで絵文字を表示する - Qiita]]
+
+** Setup
+*** Font
+Get =Symbola= font by http://users.teilar.gr/~g1951d/ .
+
+*** Emacs
+put into your own .emacs file (~/.emacs.d/init.el)
+
+#+BEGIN_SRC emacs-lisp
+(emoji-fontset-enable "Symbola")
+#+END_SRC
+
+** Color Emoji
+Emacs supports Apple Color Emoji.  But, very slow...
+
+[[./screenshot-apple.png]]
