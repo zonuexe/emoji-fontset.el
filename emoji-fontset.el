@@ -30,26 +30,26 @@
 
 ;; put into your own .emacs file (init.el)
 
-;;   (emoji-fontset/turn-on "Symbola")
+;;   (emoji-fontset-enable "Symbola")
 
 ;;; Code:
 
 (defgroup emoji-fontset nil "Set font family to display Emoji charactor"
   :group 'faces)
 
-(defcustom emoji-fontset/default-font-family "Symbola"
+(defcustom emoji-fontset-default-font-family "Symbola"
   "Default Font Family Emoji for Emoji."
   :group 'emoji-fontset
   :type '(string))
 
-(defcustom emoji-fontset/font-families
+(defcustom emoji-fontset-font-families
   '((ns  "Apple Color Emoji")
     (w32 "Segoe UI Emoji"))
   "Assoc list of Font Family for Emoji by `WINDOW-SYSTEM'."
   :group 'emoji-fontset
   :type '(repeat (cons symbol string)))
 
-(defconst emoji-fontset/codepoint
+(defconst emoji-fontset--codepoint
   '((#x1f000 . #x1f02f) ; Mahjong Tiles
     (#x1f0a0 . #x1f0ff) ; Playing Cards
     (#x1f110 . #x1f19a) ; Enclosed Alphanumeric Supplement
@@ -57,14 +57,14 @@
     ; Emoticons, Transport and Map Symbols, Alchemical Symbols
     (#x1f1e6 . #x1f8ff)))
 
-(defun emoji-fontset/font-family (font-family)
+(defun emoji-fontset--font-family (font-family)
   "Choose `FONT-FAMILY' for Emoji fontset by `WINDOW-SYSTEM'."
   (or
    font-family
-   (car (assoc-default window-system emoji-fontset/font-families 'eq '()))
-   emoji-fontset/default-font-family))
+   (car (assoc-default window-system emoji-fontset-font-families 'eq '()))
+   emoji-fontset-default-font-family))
 
-(defun emoji-fontset/set-fontset (font-family range)
+(defun emoji-fontset--set-fontset (font-family range)
   "Set `FONT-FAMILY' to fontset for Emojis by `RANGE'."
   (set-fontset-font
    "fontset-default"
@@ -72,7 +72,10 @@
    font-family))
 
 ;;;###autoload
-(defun emoji-fontset/turn-on (&optional font-family)
+(define-obsolete-function-alias 'emoji-fontset/turn-on 'emoji-fontset-enable "0.1.0")
+
+;;;###autoload
+(defun emoji-fontset-enable (&optional font-family)
   "Be enable Emoji Font face by `FONT-FAMILY'."
   (interactive "MEmoji Font Famly: ")
   (when (and (stringp font-family) (< (length font-family) 1))
@@ -80,9 +83,9 @@
   (when (version< "25.1" emacs-version)
     (error "This script is out-of-date"))
   (when window-system
-    (let ((-emoji-font-family (emoji-fontset/font-family font-family)))
-      (mapc (lambda (it) (emoji-fontset/set-fontset -emoji-font-family it))
-            emoji-fontset/codepoint)
+    (let ((-emoji-font-family (emoji-fontset--font-family font-family)))
+      (mapc (lambda (it) (emoji-fontset--set-fontset -emoji-font-family it))
+            emoji-fontset--codepoint)
       t)))
 
 (provide 'emoji-fontset)
