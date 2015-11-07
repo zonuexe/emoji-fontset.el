@@ -34,6 +34,9 @@
 
 ;;; Code:
 
+(defgroup emoji-fontset nil "Set font family to display Emoji charactor"
+  :group 'faces)
+
 (defcustom emoji-fontset/default-font-family "Symbola"
   "Default Font Family Emoji for Emoji."
   :group 'emoji-fontset
