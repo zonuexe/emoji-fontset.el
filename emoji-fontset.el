@@ -4,7 +4,6 @@
 
 ;; Author: USAMI Kenta <tadsan@zonu.me>
 ;; Created: 31 May 2015
-;; Version: 0.0.1
 ;; Keywords: emoji font config
 
 ;; This file is NOT part of GNU Emacs.
