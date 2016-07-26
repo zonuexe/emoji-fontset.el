@@ -48,6 +48,12 @@
   :group 'emoji-fontset
   :type '(repeat (cons symbol string)))
 
+(defcustom emoji-fontset-check-version 'error
+  "Behavior in new version of Emacs."
+  :type '(radio (const :tag "Force apply fontset setting." 'force)
+                (const :tag "Do not apply fontset. And display message." 'message)
+                (const :tag "Do not apply fontset. And display error."   'error)))
+
 (defconst emoji-fontset--codepoint
   '((#x1f000 . #x1f02f) ; Mahjong Tiles
     (#x1f0a0 . #x1f0ff) ; Playing Cards
@@ -55,6 +61,8 @@
     ; Regional Indicator Symbol, Enclosed Ideographic Supplement,
     ; Emoticons, Transport and Map Symbols, Alchemical Symbols
     (#x1f1e6 . #x1f8ff)))
+
+(defvar emoji-fontset--do-not-apply nil)
 
 (defun emoji-fontset--font-family (font-family)
   "Choose `FONT-FAMILY' for Emoji fontset by `WINDOW-SYSTEM'."
@@ -77,15 +85,24 @@
 (defun emoji-fontset-enable (&optional font-family)
   "Be enable Emoji Font face by `FONT-FAMILY'."
   (interactive "MEmoji Font Famly: ")
+
   (when (and (stringp font-family) (< (length font-family) 1))
     (setq font-family nil))
-  (when (version< "25.1" emacs-version)
-    (error "This script is out-of-date"))
-  (when window-system
+  (when (and (version< "25.1" emacs-version) (equal font-family "Symbola")
+             (not (eq emoji-fontset-check-version 'force)))
+    (setq emoji-fontset--do-not-apply t)
+    (cond
+     ((eq emoji-fontset-check-version 'message) (message "emoji-fontset.el is out-of-date in Emacs 25.1+"))
+     ((eq emoji-fontset-check-version 'error)   (error "emoji-fontset.el is out-of-date in Emacs 25.1+"))))
+
+  (when (and window-system (not emoji-fontset--do-not-apply))
     (let ((-emoji-font-family (emoji-fontset--font-family font-family)))
       (mapc (lambda (it) (emoji-fontset--set-fontset -emoji-font-family it))
             emoji-fontset--codepoint)
       t)))
+
+(when (version< "25.1.1" emacs-version)
+  (make-obsolete 'emoji-fontset-enable nil "0.2.0"))
 
 (provide 'emoji-fontset)
 ;;; emoji-fontset.el ends here
