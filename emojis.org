@@ -1,4 +1,4 @@
-* Unicode 7.0 Emoji and Symbols
+* Unicode 8.0 Emoji and Symbols
 ** =[U+1F000-U+1F02F]= Mahjong Tiles
    #+BEGIN_QUOTE
    🀀🀁🀂🀃🀄🀅🀆🀇🀈🀉🀊🀋🀌🀍🀎🀏🀐🀑🀒🀓🀔🀕🀖🀗🀘 🀙🀚🀛🀜🀝🀞🀟🀠🀡🀢🀣🀤🀥🀦🀧🀨🀩🀪🀫
@@ -99,4 +99,27 @@
    🡐🡑🡒🡓🡔🡕🡖🡗🡘🡙🡠🡡🡢🡣🡤🡥🡦🡧🡨🡩🡪🡫🡬🡭🡮🡯🡰🡱🡲🡳🡴🡵🡶🡷
    🡸🡹🡺🡻🡼🡽🡾🡿🢀🢁🢂🢃🢄🢅🢆🢇🢐🢑🢒🢓🢔🢕🢖🢗🢘🢙🢚🢛🢜🢝🢞🢟
    🢠🢡🢢🢣🢤🢥🢦🢧🢨🢩🢪🢫🢬🢭
+   #+END_QUOTE
+
+** Faces, Hands, and Zodiac Symbols
+   #+BEGIN_QUOTE
+   🏻 🏼 🏽 🏾 🏿 🤐🤑🤒🤓🤔🤕🤖🤗🤘🙃🙄🦀🦁🦂🦃🦄🏺
+   #+END_QUOTE
+** Symbols of Religious Significance
+   #+BEGIN_QUOTE
+   🛐🕋🕌🕍🕎🕏📿
+   #+END_QUOTE
+** Most Popularly Requested Emoji
+   #+BEGIN_QUOTE
+   🌭🌮🌯🧀🍾🍿🦃🦄
+   #+END_QUOTE
+** Missing Top Sports Symbols
+   #+BEGIN_QUOTE
+   🏏🏐🏑🏒🏓🏸
+   #+END_QUOTE
+
+** [[http://www.unicode.org/L2/L2015/15191-tr51-4-draft.html#ZWJ_Sequences][Existing Use of ZWJ Sequences]]
+   #+BEGIN_QUOTE
+   👪 👨‍👩‍👧 👨‍👩‍👧‍👦 👨‍👩‍👦‍👦 👨‍👩‍👧‍👧 👩‍👩‍👦 👩‍👩‍👧 👩‍👩‍👧‍👦 👩‍👩‍👦‍👦 👩‍👩‍👧‍👧 👨‍👨‍👦 👨‍👨‍👧 👨‍👨‍👧‍👦 👨‍👨‍👦‍👦 👨‍👨‍👧‍👧 💑
+   👩‍❤️‍👩 👨‍❤️‍👨 💏 👩‍❤️‍💋‍👩 👨‍❤️‍💋‍👨
    #+END_QUOTE
