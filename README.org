@@ -10,6 +10,14 @@ This package is obsolete in Emacs 25+.
 
 Emacs 25.1 has better fontset settings by [[https://github.com/emacs-mirror/emacs/commit/8d9e5bab41aa1995d801112b8413b514e59f033e][improve the default fontset wrt symbols]] and [[https://github.com/emacs-mirror/emacs/blob/2c2b0cd07c143e33af9f7237ef4819c28764a90f/etc/NEWS#L2610-L2617][disabling color emoji on macOS (Cocoa)]].
 
+*** Emacs 27
+
+Emacs has re-enabled color emoji on macOS, you can set it up easily in your ~init.el~:
+
+#+BEGIN_SRC emacs-lisp
+(set-fontset-font "fontset-default" 'unicode "Apple Color Emoji" nil 'prepend)
+#+END_SRC
+
 ** Setup
 *** Font
 Get =Symbola= font by http://users.teilar.gr/~g1951d/ .
